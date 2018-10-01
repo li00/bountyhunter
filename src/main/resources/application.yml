@@ -1,0 +1,32 @@
+server:
+  port: 8088
+  tomcat:
+    max-threads: 1000
+
+servlet:
+    session:
+      timeout: 120 #两分钟过期
+
+spring:
+  application:
+    name: bountyhunter
+  data:
+      mongodb:
+        uri: mongodb://localhost:27017/bountyhunter
+  mail: #邮箱服务
+      host: smtp.163.com
+      port: 25
+      username: 13524103691@163.com
+      password: 13524103691
+      default-encoding: UTF-8
+
+security:  #url过滤
+  url: /upd,/del,/add
+  validity: 2592000000   #过期时间
+
+logfile:
+  log: /tmp/bountyhunter/
+
+
+
+
