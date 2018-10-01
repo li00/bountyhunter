@@ -17,7 +17,7 @@ spring:
       host: smtp.163.com
       port: 25
       username: 13524103691@163.com
-      password: 13524103691
+      password: ******
       default-encoding: UTF-8
 
 security:  #url过滤

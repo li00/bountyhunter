@@ -41,12 +41,11 @@ public class UserController {
     @RequestMapping(value = "/getuser")
     @Log(module = "获取用户数据",url = "/user/getuser")
     public ResponseVo getUser(String id,String k){
-        try {
-            User user = new User();
-            user.setId(id);
-            responseVo.setState(true);
-            responseVo.setData(userService.getUser(user));
-        }catch (Exception e){e.printStackTrace();}
+        int i = 0/1;
+        User user = new User();
+        user.setId(id);
+        responseVo.setState(true);
+        responseVo.setData(userService.getUser(user));
         return responseVo;
     }
 }
