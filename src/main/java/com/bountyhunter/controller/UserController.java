@@ -23,12 +23,18 @@ public class UserController {
     @RequestMapping(value = "/adduser")
     @Log(module = "新增用户数据",url = "/user/adduser")
     public ResponseVo addUser(User user, String k){
+        try {
+            userService.addUser(user);
+        } catch (Exception e){e.printStackTrace();}
         return responseVo;
     }
 
     @RequestMapping(value = "/upduser")
     @Log(module = "修改用户数据",url = "/user/updtuser")
     public ResponseVo updUser(User user,String k){
+        try {
+            userService.updUser(user);
+        } catch (Exception e){e.printStackTrace();}
         return responseVo;
     }
 
