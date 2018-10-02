@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Follow {
     @Id
     private String id;
+    private String userId;   //所属用户
     private String follow;   //已关注({"nickName":"值","id";"","time":""})
     private String beFollow; //被关注({"nickName":"值","id";"","time":""})
 }

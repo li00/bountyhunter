@@ -16,5 +16,6 @@ public class Category {
     private String name;      //分类名称
     private String previous;  //上级分类ID
     private Integer layer;    //所在层数
+    private String createUser;//创建人
     private String createTime;//创建时间
 }

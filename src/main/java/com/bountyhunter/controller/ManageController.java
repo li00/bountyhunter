@@ -32,6 +32,7 @@ public class ManageController {
     private MailUtil mailUtil;
 
     @RequestMapping(value = "/code")
+    @Log(module = "获取验证码",url = "/manage/code")
     public ResponseVo login(String phone,String k){
         if (phone != null && !"".equals(phone.trim())){
             String[] code = security.getCode();
@@ -54,12 +55,14 @@ public class ManageController {
     }
 
     @RequestMapping(value = "/register")
+    @Log(module = "用户注册",url = "/manage/register")
     public ResponseVo register(@RequestBody User user,String k){
-
+        // 用户组册的时候得初始化关注人（follow）个人偏好（systemSetting）集合表
         return responseVo;
     }
 
     @RequestMapping(value = "/pwd")
+    @Log(module = "用户找回密码",url = "/manage/pwd")
     public ResponseVo findPassword(String email,String k){
         int result = mailUtil.sendMail(email,"赏金猎人密码修改","密码为123456");
         if(result == 1) responseVo.setState(true);

@@ -17,16 +17,19 @@ public class DemandController {
     private ResponseVo responseVo;
 
     @RequestMapping(value = "adddemand")
+    @Log(module = "新增需求文章",url = "/demand/adddemand")
     public ResponseVo addDemand(Demand demand,String k){
         return responseVo;
     }
 
     @RequestMapping(value = "deldemand")
+    @Log(module = "删除需求文章",url = "/demand/deldemand")
     public ResponseVo delDemand(Demand demand,String k){
         return responseVo;
     }
 
     @RequestMapping(value = "upddemand")
+    @Log(module = "修改需求文章",url = "/demand/upddemand")
     public ResponseVo updDemand(Demand demand,String k){
         return responseVo;
     }

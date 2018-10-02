@@ -2,7 +2,12 @@ package com.bountyhunter.dao;
 
 import com.bountyhunter.model.Demand;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -29,6 +34,10 @@ public class DemandDao {
     }
 
     public List<Demand> getDemands(Demand demand){
+        final Pageable pageableRequest = new PageRequest(0,10);
+        Query query = new Query();
+        query.with(new Sort(new Sort.Order(Sort.Direction.DESC,"createTime")));
+        query.with(pageableRequest);
         return mongoTemplate.findAll(Demand.class);
     }
 }
